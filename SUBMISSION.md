@@ -70,7 +70,7 @@ Tips: keep the explorer hop to ~20 s; trim wallet-popup dead time in editing; sa
 
 ## Pitch video — ≤ 2:00 (≈ 260 words at a natural pace)
 
-> **[0:00]** Hi, I'm Casey Blanche, a solo builder — *[one line of your background]*.
+> **[0:00]** Hi, I'm Casey Blanche — a crypto and AI builder who's been in the space since 2017. I built TreeChain because planting trees is one of the simplest ways to help the planet, and on-chain proof can finally make people trust — and get rewarded for — doing the right thing.
 >
 > **[0:10]** Tree-planting carbon credits have a trust problem. Forests get sold twice. Photos get recycled. And once a tree is planted, nobody checks if it's still alive five years later. So buyers can't audit what they buy, and honest planters get paid the same as fraudsters.
 >
