@@ -3,7 +3,7 @@
 **To:** Mimo (continuing agent) **From:** Claude (session ended with the owner's subscription) **Date:** 2026-10-05
 **Owner:** Casey (solo builder; brief names him "Casey Blanche / @casey-blanche")
 **Hard deadline:** portal closes **14 Oct 2026 10:59 GMT+7** (= 04:59 UTC). Aim to be *submitted* a day early.
-**Repo state:** two commits on `main` (the project, then this handover), working tree clean. The code is finished and tested **locally**. Nothing has touched Monad Testnet, Vercel, GitHub or the hackathon portal yet.
+**Repo state:** three commits on `main` (the project, then two handover commits), working tree clean. The code is finished and tested **locally**. Nothing has touched Monad Testnet, Vercel, GitHub or the hackathon portal yet.
 
 Read this file first, then `GO-LIVE.md` (ordered runbook), then `SUBMISSION.md` (portal text, video scripts, checklist). `README.md` is the public-facing description and already says everything a judge needs.
 
@@ -142,7 +142,7 @@ The previous session's sandbox could **not** reach `testnet-rpc.monad.xyz`, Verc
 
 1. **RPC endpoints** in `frontend/src/wagmi.ts`: `https://testnet-rpc.monad.xyz`, `https://rpc-testnet.monadinfra.com`, `https://rpc.ankr.com/monad_testnet`. Confirm each answers `eth_chainId` = `0x279f` (10143). Drop any that don't.
 2. **Multicall3 on Monad Testnet** at the canonical `0xcA11bde05977b3631167028862bE2a173976CA11`: run `cast code 0xcA11bde05977b3631167028862bE2a173976CA11 --rpc-url https://testnet-rpc.monad.xyz`. If empty, the app's batched reads (`useReadContracts`) will fail; fix by setting `batch.multicall: false` or deploying Multicall3.
-3. **Block-explorer base URL.** The app and `scripts/write-deployed.mjs` use `https://testnet.monadscan.com` (`/tx/…`, `/address/…`, `/nft/<contract>/<id>`). Confirm those URL shapes resolve, or switch to whichever explorer the Monad docs list. `DEPLOYED.md` links are generated from this.
+3. **Block-explorer base URL.** The app and `scripts/write-deployed.mjs` use `https://testnet.monadscan.com` (`/tx/…`, `/address/…`, `/nft/<contract>/<id>`). Confirm those URL shapes resolve, or switch to whichever explorer the Monad docs list. `DEPLOYED.md` links are generated from this. Note: the owner's faucet receipt in the workspace `DEPLOYED.md` links `https://testnet.monadexplorer.com/tx/<hash>`, so that explorer is known to serve tx pages; if MonadScan's shapes don't resolve, change `blockExplorers` in `frontend/src/deployment.ts` and `explorer` in `scripts/write-deployed.mjs` to it.
 4. **Monad gas semantics.** Monad charges by *gas limit*, not gas used. The app simulates then sends with the node's estimate; the in-browser deployer sends 12 txs. Watch for "insufficient funds" or over-charging on the first real deploy (≈ 9M gas total; keep ≥ 1 MON in the wallet).
 5. **Trust Wallet in a real browser.** Wallet discovery, "Switch to Monad Testnet" (`wallet_addEthereumChain`/`wallet_switchEthereumChain`), and the popups were tested only against a mocked EIP-6963 wallet. Expect to debug here first.
 6. **Real phone camera and GPS.** E2E used Chromium's fake video device and mocked geolocation. Test `getUserMedia` + `watchPosition` on an actual phone over https (Vercel gives https). Manual-coordinates override exists for laptops.
@@ -213,6 +213,19 @@ scripts/           export-abi.mjs, write-deployed.mjs
 docs/brand/        logo.svg, logo-512.png, logo-1024.png
 ```
 
-Original brief (the owner's, on his Mac): `/Users/terminal/XiaomiMiMoProjects/.mimo-sessions/2026/10/02/new-hackathon-placeholder-monad-metropolis-hackathon/` — `HANDOVER_PROMPT.md`, `monad-metropolis-hackathon-brief.md`, `pre-submission-checklist.md`, `DEPLOYED.md`. If anything here conflicts with those files, the owner's brief wins; tell him about the conflict.
+### Your workspace on the owner's Mac
+
+`/Users/terminal/XiaomiMiMoProjects/.mimo-sessions/2026/10/02/new-hackathon-placeholder-monad-metropolis-hackathon/`
+
+| File | What it is |
+|---|---|
+| `HANDOVER_FROM_CLAUDE.md` | this file (identical to `HANDOVER.md` in the repo) |
+| `treechain.bundle` | the complete git repo (3 commits, `main`): `git clone treechain.bundle treechain`, then `git submodule update --init --recursive` |
+| `HANDOVER_PROMPT.md` | the owner's original build prompt. If anything here conflicts with it, the owner's brief wins; tell him about the conflict. |
+| `monad-metropolis-hackathon-brief.md`, `HACKATHON_BRIEF.md` | hackathon rules and context |
+| `pre-submission-checklist.md` | portal submit checklist |
+| `DEPLOYED.md` | **the owner's receipts file** (burner wallet, faucet tx, network table, portal status: "1 of 5 complete", contract table all `TBD`). **Don't overwrite it.** After deploy, fill its contract table and add the proof txs there as well as in the repo's own `DEPLOYED.md` (the brief says "After deploy, fill DEPLOYED.md with addresses + explorer txs"). |
+
+Portal facts from that `DEPLOYED.md` (authoritative as of 2026-10-02): the project **TreeChain** already exists on `hackathon.monad.xyz` (signed in with the owner's Google account), name/one-liner/description/GTM are saved, and the **pitch video is required** on this portal. Still empty: logo, GitHub URL, live URL, both videos, Submit. Judging runs 14 Oct–3 Nov, winners from 4 Nov. Treat the Discord "Monad Developers" server + Metropolis role as required until proven otherwise.
 
 Commit that this handover describes: `a2a053f` ("TreeChain ($Tree): verification chain for trees, built on Monad").
