@@ -2,7 +2,7 @@
 
 **A verification chain, not a blockchain — built on Monad.**
 
-Plant a tree → mint a **TreeNFT** (photo + GPS + date) → earn **$Tree** → businesses buy and **burn** $Tree for an on-chain carbon offset, backed by a **50-year peer-verification chain**.
+**1 `$Tree` = 1 tree = 1 tonne of CO₂ offset over 50 years.** Plant a tree → mint a **TreeNFT** (photo + GPS + date) → the tree is backed by a **50-year peer-verification chain**. Businesses buy `$Tree` and **burn** it to offset their carbon footprint — real carbon credits for ESG and carbon taxes, not a feel-good point system.
 
 Built solo for the [Monad Metropolis Hackathon](https://hackathon.monad.xyz). Everything runs on **Monad Testnet** (chain `10143`).
 
@@ -22,6 +22,32 @@ Tree-planting carbon credits have a trust problem: the same forest gets sold twi
 ## The idea
 
 Every tree is an on-chain record you can audit from a coordinate and a photo hash, and it only earns its full value if peers keep confirming it's alive for 50 years.
+
+
+## What `$Tree` actually is
+
+**`$Tree` is not a points token.** It is a **carbon credit pegged to one real, verified tree**.
+
+| Claim | Meaning |
+|---|---|
+| **1 `$Tree`** | **1 tree** planted and registered as a TreeNFT |
+| **1 tree** | **1 tonne of CO₂ offset over 50 years** (1 tCO₂) |
+| **Burn** | A business sends `$Tree` to the **BurnVault / burn address** and gets an on-chain **`CarbonRetired` receipt** |
+
+So the market use case is simple: **corporations buy `$Tree` and burn it to offset their carbon footprint** — the same reason they buy carbon credits today for compliance, ESG reporting, and **carbon taxes**. The burn is the retirement: it is public, auditable, and tied back to a photo, a GPS coordinate, and ten peer verifications of that tree.
+
+Each full tree credit is split when the tree is planted (exactly **1.00 `$Tree`**, no pre-mine):
+
+| Who | `$Tree` | Why |
+|---|---|---|
+| Planter | 0.25 now + 0.25 streamed over 50 years | Pays people to plant **and** keep the tree alive |
+| Verifiers | 0.45 (10 × 0.045) | Pays strangers to check the tree every 5 years |
+| Team | 0.05 | Ops / registry |
+
+A tree that dies or fails verification stops earning. That is the point: **the credit only exists while the tree does**.
+
+**Indicative market bands** (for framing, not a quote): certified reforestation $15–$45 / tCO₂ · blue carbon $30–$75 · high-integrity ICVCM $15–$30 · compliance markets such as EU ETS often $80–$100+. One verified tree ≈ one tonne of removal over its life.
+
 
 ```mermaid
 flowchart LR
