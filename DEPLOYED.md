@@ -25,7 +25,7 @@
 |---|---|
 | Plant → TreeNFT mint (+0.25 $Tree) | [`0x2625324f187d5c6f34810a34b902eee70353fb39a43f6f4d9e3a8c8eecb49f66`](https://testnet.monadscan.com/tx/0x2625324f187d5c6f34810a34b902eee70353fb39a43f6f4d9e3a8c8eecb49f66) |
 | Stake the TreeNFT | [`0xf9d01db754a97a594ccb68909d83b1c328631428dd1e964a01ff0308c5b02260`](https://testnet.monadscan.com/tx/0xf9d01db754a97a594ccb68909d83b1c328631428dd1e964a01ff0308c5b02260) |
-| Peer verification (+0.045 $Tree) | _add with --peer-tx_ |
+| Peer verification (+0.045 $Tree) | [`0x58df4a809a4d7a8e2cefcf4ca25f99b9d50b74f85342edc940ecf8640ffed985`](https://testnet.monadscan.com/tx/0x58df4a809a4d7a8e2cefcf4ca25f99b9d50b74f85342edc940ecf8640ffed985) |
 | Claim staking stream | [`0xe19968fb3c54b71828ec481efb6a1734b22876f34aea2bb01a3890827ab590c2`](https://testnet.monadscan.com/tx/0xe19968fb3c54b71828ec481efb6a1734b22876f34aea2bb01a3890827ab590c2) |
 | Burn → CarbonRetired receipt | [`0xa2d5a64b230edad70268186e2fc423d19c3a822029612e4ded1328a689de7d59`](https://testnet.monadscan.com/tx/0xa2d5a64b230edad70268186e2fc423d19c3a822029612e4ded1328a689de7d59) |
 
